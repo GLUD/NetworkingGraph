@@ -10,8 +10,7 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -50,6 +49,13 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
+  },
+  node: {
+    child_process: "empty",
+    dns: 'empty',
+    net: 'empty',
+    os: 'empty',
+    tls: 'empty'
   },
   devServer: {
     historyApiFallback: true,
