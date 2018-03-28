@@ -1,0 +1,53 @@
+
+// Botones de navegacion
+.rout-bot {
+  position: fixed;
+  top: 40%;
+  background-image: url("../assets/logos-icons/flechas-nav.png");
+  width: 55px;
+  height: 68px;
+  display: block;
+
+  &.bot-left {
+    left: 0;
+    background-position: 0 0;
+
+    &:focus,
+    &:hover {
+      background-position: 0 -68px;
+    }
+  }
+
+  &.bot-right {
+    right: 0;
+    background-position: -55px 0;
+
+    &:focus,
+    &:hover {
+      background-position: -55px -68px;
+    }
+  }
+}
+// Marcar contenidos vistos
+.elem-visto,
+.elem-visto-cen {
+  &:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    background-image: url("../assets/logos-icons/ok-bullet.png");
+    background-size: contain;
+  }
+}
+
+.elem-visto-cen {
+  &:after {
+    content: "";
+    margin: auto;
+    right: 0;
+    left: 0;
+  }
+}

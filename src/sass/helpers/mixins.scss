@@ -1,0 +1,389 @@
+@mixin transit ($transi, $transitime) {
+	-webkit-transition: $transi $transitime;
+	-moz-transition: $transi $transitime;
+	-ms-transition: $transi $transitime;
+	-o-transition: $transi $transitime;
+	transition: $transi $transitime;
+}
+@mixin filt ($filt) {
+	-webkit-filter: $filt;
+	-moz-filter: $filt;
+	-ms-filter: $filt;
+	-o-filter: $filt;
+	filter: $filt;
+}
+@mixin transformix ($transieffe) {
+	-webkit-transform: $transieffe;
+	-moz-transform: $transieffe;
+	-ms-transform: $transieffe;
+	-o-transform: $transieffe;
+	transform: $transieffe;
+}
+@mixin transforsty ($transty) {
+	-webkit-transform-style: $transty;
+	-moz-transform-style: $transty;
+	-ms-transform-style: $transty;
+	-o-transform-style: $transty;
+	transform-style: $transty;
+}
+@mixin efftranslate($transx, $transy) {
+	-webkit-transform: translate($transx, $transy);
+	-moz-transform: translate($transx, $transy);
+	-ms-transform: translate($transx, $transy);
+	-o-transform: translate($transx, $transy);
+	transform: translate($transx, $transy);
+}
+@mixin zoomimag ($zoomimaY, $zoomimaX) {
+	-webkit-transform: scale($zoomimaY, $zoomimaX);
+	-moz-transform: scale($zoomimaY, $zoomimaX);
+	-ms-transform: scale($zoomimaY, $zoomimaX);
+	-o-transform: scale($zoomimaY, $zoomimaX);
+	transform: scale($zoomimaY, $zoomimaX);
+}
+@mixin rotarenY($roty) {
+	-webkit-transform: rotateY($roty);
+	-moz-transform: rotateY($roty);
+	-ms-transform: rotateY($roty);
+	-o-transform: rotateY($roty);
+	transform: rotateY($roty);
+}
+@mixin rotate($rot) {
+	-webkit-transform: rotate($rot);
+	-moz-transform: rotate($rot);
+	-ms-transform: rotate($rot);
+	-o-transform: rotate($rot);
+	transform: rotate($rot);
+}
+@mixin towtrans($trans1, $trans1para, $trans2, $trans2para) {
+	-webkit-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+	-moz-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+	-ms-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+	-o-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+	transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+}
+@mixin quitar_anim() {
+	-webkit-animation: none !important;
+	-moz-animation: none !important;
+	-ms-animation: none !important;
+	-o-animation: none !important;
+	animation: none !important;
+}
+@mixin fix_flicker() {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+@mixin animaciones($animname, $animdura:1s, $animtiming:ease, $animdelay:0s, $animiter:infinite, $animdir:alternate, $animori:center) {
+	-webkit-animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+	-moz-animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+	-o-animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+	animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+	-webkit-transform-origin: $animori;
+	-moz-transform-origin: $animori;
+	-o-transform-origin: $animori;
+	transform-origin: $animori;
+}
+@mixin animacion_steps($animname, $animdura:1s, $animsteps:steps(0), $animiter:infinite, $animdir: normal) {
+	-webkit-animation: $animname $animdura $animsteps $animiter $animdir;
+	-moz-animation: $animname $animdura $animsteps $animiter $animdir;
+	-o-animation: $animname $animdura $animsteps $animiter $animdir;
+	animation: $animname $animdura $animsteps $animiter $animdir;
+}
+@mixin aspect-ratio($width, $height) {
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+@mixin bot-respo($wid, $aspx, $aspy, $borwid, $borco, $backco, $pos: relative) {
+	position: $pos;
+	width: 100%;
+	max-width: $wid;
+	@include aspect-ratio($aspx, $aspy);
+	border: solid $borwid $borco;
+	background-color: $backco;
+
+	.content {
+		padding: 5px;
+
+		.intalign {
+			width: 100%;
+			height: 100%;
+			display: table;
+
+			p {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+@mixin centrarabsol() {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+@mixin insidebor($borwidt, $col) {
+	-webkit-box-shadow: inset 0 0 0 $borwidt $col;
+	-moz-box-shadow: inset 0 0 0 $borwidt $col;
+	box-shadow: inset 0 0 0 $borwidt $col;
+}
+@mixin shadow($shad) {
+	-webkit-box-shadow: $shad;
+	-moz-box-shadow: $shad;
+	-o-box-shadow: $shad;
+	box-shadow: $shad;
+}
+@mixin textshadow($shad) {
+	-webkit-text-shadow: $shad;
+	-moz-text-shadow: $shad;
+	-o-text-shadow: $shad;
+	text-shadow: $shad;
+}
+@mixin perspect($pers) {
+	-webkit-perspective: $pers;
+	-moz-perspective: $pers;
+	-o-perspective: $pers;
+	perspective: $pers;
+}
+@mixin borpng ($xdist, $ydist, $desen, $col) {
+	-webkit-filter: drop-shadow($xdist $ydist $desen $col);
+	-moz-filter: drop-shadow($xdist $ydist $desen $col);
+	-o-filter: drop-shadow($xdist $ydist $desen $col);
+	filter: drop-shadow($xdist $ydist $desen $col);
+}
+@mixin bripng ($col) {
+	cursor: pointer;
+	text-align: center;
+	@include animaciones(bripng, 1s);
+	@include borpng(1px, 1px, 0, $col);
+	@-webkit-keyframes bripng {
+		0% {
+			@include borpng(1px, 1px, 0px, $col);
+		}
+
+		100% {
+			@include borpng(1px, 1px, 10px, $col);
+		}
+	}
+	@-moz-keyframes bripng {
+		0% {
+			@include borpng(1px, 1px, 0px, $col);
+		}
+
+		100% {
+			@include borpng(1px, 1px, 10px, $col);
+		}
+	}
+	@-o-keyframes bripng {
+		0% {
+			@include borpng(1px, 1px, 0px, $col);
+		}
+
+		100% {
+			@include borpng(1px, 1px, 10px, $col);
+		}
+	}
+	@keyframes bripng {
+		0% {
+			@include borpng(1px, 1px, 0px, $col);
+		}
+
+		100% {
+			@include borpng(1px, 1px, 10px, $col);
+		}
+	}
+}
+// Button styles
+@mixin buttonsBlank($fsize, $wid, $hei, $col, $backcol, $shadcol) {
+	box-sizing: border-box;
+	color: $col;
+	width: $wid;
+	height: $hei;
+	border: 3px solid;
+	border-color: $col;
+	font-size: $fsize;
+	font-weight: bold;
+	text-decoration: none;
+	transition: all 0.5s;
+	background-color: $backcol;
+	vertical-align: top;
+	padding: 10px;
+
+	p {
+		text-align: center;
+		color: $col;
+		text-decoration: none;
+		margin: auto;
+		line-height: 1em;
+	}
+	cursor: pointer;
+	@include shadow(0 0 5px $shadcol);
+	@include textshadow(0 0 5px $shadcol);
+
+	&:hover {
+		background-color: transparentize(black,0.5);
+
+		p {
+			color: white !important;
+		}
+	}
+
+	&.botlar {
+		min-height: 60px;
+	}
+}
+@mixin buttontrian ($backcol, $col, $wid, $flecol) {
+	background-color: $backcol;
+	color: $col;
+	width: $wid;
+	height: auto;
+	padding: 10px;
+	text-align: center;
+	line-height: 1.4em;
+	margin: auto;
+	position: relative;
+	cursor: pointer;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -20px;
+		width: 0;
+		height: 0;
+		border-left: ($wid / 2) solid transparent;
+		border-right: ($wid / 2) solid transparent;
+		border-top: 20px solid $backcol;
+	}
+
+	span {
+		font-size: 1.4em;
+		font-weight: bold;
+	}
+
+	p {
+		margin: auto;
+	}
+
+	.bot-fle {
+		color: $flecol;
+		position: absolute;
+		bottom: -10px;
+		display: block;
+		height: 20px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 2;
+		font-size: 0.8em;
+	}
+}
+@mixin textFleder ($backcol, $col) {
+	background-color: $backcol;
+	color: $col;
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 10px 34px 10px 5px;
+	position: relative;
+	height: 34px;
+	font-weight: bold;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: -7px;
+		right: -33px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 24px 0 24px 34px;
+		border-color: transparent transparent transparent $backcol;
+	}
+}
+@mixin textFlederPeq ($backcol, $col) {
+	background-color: $backcol;
+	color: $col;
+	font-size: 0.8em;
+	display: inline-block;
+	padding: 1px 10px;
+	margin: 10px 34px 10px 5px;
+	position: relative;
+	height: 24px;
+	font-weight: bold;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: -6px;
+		right: -23px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 18px 0 18px 24px;
+		border-color: transparent transparent transparent $backcol;
+	}
+}
+@mixin textFleIzqPeq ($backcol, $col) {
+	background-color: $backcol;
+	color: $col;
+	font-size: 0.8em;
+	display: inline-block;
+	padding: 1px 10px;
+	margin: 10px 5px 10px 34px;
+	position: relative;
+	height: 24px;
+	font-weight: bold;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: -6px;
+		left: -23px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 18px 24px 18px 0;
+		border-color: transparent $backcol transparent transparent;
+	}
+}
+
+.borde-dashed {
+	padding: 20px;
+	border: dashed 2px #CCC;
+	border-radius: 0 0 15px 0;
+	@include shadow(0 0 15px gray)
+	.circulos {
+	  margin-bottom: 2em;
+	  margin-top: -10em;
+	  margin-left: -4em;
+	}
+}
+
+.borde-dashed2 {
+	padding: 20px;
+	border: dashed 2px #CCC;
+	border-radius: 20px;
+	@include shadow(0 0 0 gray)
+}
+.textDown{
+  // padding: 0px;
+  border-bottom: solid 1px #CCC;
+  // border-radius: ;
+  @include shadow(15px gray)
+}
