@@ -9,9 +9,14 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap": "^4.0.0",
     "bootstrap-vue": "^1.2.0",
+    "dns": "^0.2.2",
+    "nodejs-traceroute": "^1.1.1",
     "popper.js": "^1.12.9",
+    "raw-socket": "^1.5.2",
+    "traceroute": "^1.0.0",
+    "tracert": "^0.1.2",
     "vue": "^2.5.3",
     "vue-d3": "^0.1.0"
   },
@@ -30,5 +35,15 @@
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
+  },
+  "browser": {},
+  "map": {
+    "buffer": "@empty",
+    "child_process": "@empty",
+    "fs": "@empty",
+    "os": "@empty",
+    "path": "@empty",
+    "process": "@empty",
+    "readline": "@empty"
   }
 }
