@@ -42,7 +42,6 @@
       </form>
     </div>
   </div>
-  {{this.$store.state.pregunta.direccion}}
 </div>
 </template>
 
@@ -169,6 +168,10 @@ export default {
       //   console.log(ex);
       // }
     },
+    preguntas() {
+      console.log(this.$store.state.pregunta.direccion);
+      return this.$store.state.pregunta.direccion;
+    },
   },
   computed: {
     GuardarDato: {
@@ -178,10 +181,6 @@ export default {
       set(value) {
         this.$store.commit("guardarPregunta", value);
       }
-    },
-    preguntas() {
-      console.log(this.$store.state.pregunta.direccion);
-      return this.$store.state.pregunta.direccion;
     },
   }
 }

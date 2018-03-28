@@ -22,8 +22,5 @@ export const store = new Vuex.Store({
     screenTrack: (state, [currentScr, cantScr]) => state.screens = [currentScr, cantScr],
     temaName: (state, event) => state.tema = event,
     guardarPregunta: (state, respuesta) => state.pregunta.direccion = respuesta,
-
-
-
   }
 });
