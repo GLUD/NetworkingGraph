@@ -31,17 +31,18 @@
       <h4>Ingrese DNS</h4>
       <form class="text-center">
         <label class="radio-inline">
-            <input type="radio" name="optradio" value="google.com" v-model="GuardarDato">1. Google.com
+            <input type="radio" name="google" value="google.com" v-model="GuardarDato">1. Google.com
         </label>
         <label class="radio-inline">
-            <input type="radio" name="optradio" value="youtube.com" v-model="GuardarDato">2. Youtube.com
+            <input type="radio" name="youtube" value="youtube.com" v-model="GuardarDato">2. Youtube.com
           </label>
         <label class="radio-inline">
-            <input type="radio" name="optradio" value="facebook.com" v-model="GuardarDato">3. Facebook.com
+            <input type="radio" name="facebook" value="facebook.com" v-model="GuardarDato">3. Facebook.com
           </label>
       </form>
     </div>
   </div>
+  {{this.$store.state.pregunta.direccion}}
 </div>
 </template>
 
@@ -172,15 +173,15 @@ export default {
   computed: {
     GuardarDato: {
       get() {
-        return this.$store.state.pregunta;
+        return this.$store.state.pregunta.direccion;
       },
       set(value) {
         this.$store.commit("guardarPregunta", value);
       }
     },
     preguntas() {
-      console.log(this.$store.state.pregunta);
-      return this.$store.state.pregunta;
+      console.log(this.$store.state.pregunta.direccion);
+      return this.$store.state.pregunta.direccion;
     },
   }
 }

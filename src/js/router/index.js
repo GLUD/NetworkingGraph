@@ -1,7 +1,7 @@
 import Vue from "vue"
 import Router from "vue-router"
 import Inicio from "@/components/Inicio"
-import ruta from "@/components/screens/Networking/ruta"
+import ruta from "@/components/screens/00-networking/networking"
 
 Vue.use(Router)
 
