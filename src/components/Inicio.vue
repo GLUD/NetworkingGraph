@@ -8,7 +8,7 @@
     <h2>Ingenieria de sistemas</h2>
     <h3>Autores</h3>
     <h4>Andres Mauricio Acosta Pulido 20142020111</h4>
-    <h4>Daniel David Leal Lara 20151020057</h4>
+    <!-- <h4>Daniel David Leal Lara 20151020057</h4> -->
     <br>
     <div class="col-sm-12 text-center">
       <router-link :to="linksPath+'1'" aria-label="Iniciar el curso">
