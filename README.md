@@ -21,3 +21,9 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Documentación
+
+en la carpeta Doc encontraras el archivo base para la construcción de este proyecto, actualmente no se a podido realizar la traza de rutas, ya que no he podido implementar tracerouter.
+
+> Doc/Laboratorio Traza RIR.pdf
