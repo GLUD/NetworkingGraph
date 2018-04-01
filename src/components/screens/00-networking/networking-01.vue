@@ -44,6 +44,14 @@
       </div>
     </div>
   </div>
+  <ul id="example-1">
+    <li v-for="item in items">
+      <div class="num"> {{ item.num }} </div>
+      <div class="ip"> {{ item.hostname }} <br> {{ item.ip }} </div>
+      <div class="linea"></div>
+      <div class="ttl"> {{ item.ttl1 }} <br> {{ item.ttl2 }} <br> {{ item.ttl3 }} </div>
+    </li>
+  </ul>
   <!-- Ya guardo el dato -->
   {{this.$store.state.pregunta.direccion}}
 </div>
@@ -51,11 +59,14 @@
 <!-- http://gcoch.github.io/D3-tutorial/asociar-datos.html -->
 <!-- https://www.w3schools.com/bootstrap4/default.asp -->
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       servidor: false,
       dominio: "",
+      items: [],
     };
   },
   mounted() {
@@ -65,10 +76,14 @@ export default {
     ecuador() {
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
-      this.$http.get("http://127.0.0.1:8000/ws4/"+this.dominio, {
-      }).then(function(data) {
-        console.log(data)
-      });
+      // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
+      axios.get('http://localhost:8000/ws4/' + this.dominio + '/')
+      .then((response)  =>  {
+        console.log('success response', response);
+        this.items = response.data;
+      }, (error)  =>  {
+        console.log('error', error);
+      })
     },
     EEUU() {
       this.dominio = this.$store.state.pregunta.direccion

@@ -55,9 +55,14 @@ def ws1(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
-        node['ttl1'] = line[2]
-        node['ttl2'] = line[3]
-        node['ttl3'] = line[4]
+        try:
+            node['ttl1'] = line[2]
+            node['ttl2'] = line[3]
+            node['ttl3'] = line[4]
+        except IndexError:
+            node['ttl1'] = False
+            node['ttl2'] = False
+            node['ttl3'] = False
         data.append(node)
     print(data)
     #data = {'foo': 'bar', 'hello': 'world'}
@@ -93,9 +98,14 @@ def ws2(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
-        node['ttl1'] = line[2]
-        node['ttl2'] = line[3]
-        node['ttl3'] = line[4]
+        try:
+            node['ttl1'] = line[2]
+            node['ttl2'] = line[3]
+            node['ttl3'] = line[4]
+        except IndexError:
+            node['ttl1'] = False
+            node['ttl2'] = False
+            node['ttl3'] = False
         data.append(node)
     return HttpResponse(json.dumps(data), content_type='application/json')
 
@@ -129,9 +139,14 @@ def ws3(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
-        node['ttl1'] = line[2]
-        node['ttl2'] = line[3]
-        node['ttl3'] = line[4]
+        try:
+            node['ttl1'] = line[2]
+            node['ttl2'] = line[3]
+            node['ttl3'] = line[4]
+        except IndexError:
+            node['ttl1'] = False
+            node['ttl2'] = False
+            node['ttl3'] = False
         data.append(node)
     return HttpResponse(json.dumps(data), content_type='application/json')
 
@@ -165,9 +180,14 @@ def ws4(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
-        node['ttl1'] = line[2]
-        node['ttl2'] = line[3]
-        node['ttl3'] = line[4]
+        try:
+            node['ttl1'] = line[2]
+            node['ttl2'] = line[3]
+            node['ttl3'] = line[4]
+        except IndexError:
+            node['ttl1'] = False
+            node['ttl2'] = False
+            node['ttl3'] = False
         data.append(node)
     return HttpResponse(json.dumps(data), content_type='application/json')
 
@@ -200,8 +220,13 @@ def ws5(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
-        node['ttl1'] = line[2]
-        node['ttl2'] = line[3]
-        node['ttl3'] = line[4]
+        try:
+            node['ttl1'] = line[2]
+            node['ttl2'] = line[3]
+            node['ttl3'] = line[4]
+        except IndexError:
+            node['ttl1'] = False
+            node['ttl2'] = False
+            node['ttl3'] = False
         data.append(node)
     return HttpResponse(json.dumps(data), content_type='application/json')
