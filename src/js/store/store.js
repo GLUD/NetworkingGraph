@@ -1,6 +1,9 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import VueResource from 'vue-resource';
 
+Vue.use(VueResource);
+Vue.config.productionTip = false
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({

@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import BootstrapVue from "bootstrap-vue"
 import App from './App'
+import VueResource from 'vue-resource';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
 import router from './js/router'
@@ -20,8 +21,10 @@ import Buttoncirclesecondary from './components/ui/Buttoncirclesecondary'
 Vue.config.productionTip = false
 
 // This is the UI componentlibrary
-Vue.use(BootstrapVue);
 
+Vue.use(BootstrapVue);
+Vue.use(VueResource);
+Vue.config.productionTip = false
 // Register here all the components
 Vue.component('header-app', Headerapp)
 Vue.component('footer-app', Footerapp)

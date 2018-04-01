@@ -3,7 +3,7 @@
   <router-link aria-label="Página anterior" class="rout-bot bot-left hvr-grow" to="/"></router-link>
   <div class="row text-center">
     <div class="col-sm-12">
-      <h4>Seleccioné DNS</h4>
+      <h4>Seleccioné dominio</h4>
       <br>
       <form class="text-center">
         <label class="col-sm-3 radio-inline">
@@ -20,26 +20,26 @@
     <div class="col-sm-6" v-if="servidor">
       <h1>Remotamente</h1>
       <div class="col-sm-12">
-        <button type="button" class="btn btn-primary btn-sm btn-block" @click="ecuador()">Ecuador</button>
+        <button type="button" class="btn btn-primary btn-sm btn-block" @click="ecuador">Ecuador</button>
         <br>
       </div>
       <div class="col-sm-12">
-        <button type="button" class="btn btn-primary btn-sm btn-block" @click="EEUU()">Estados Unidos</button>
+        <button type="button" class="btn btn-primary btn-sm btn-block" @click="EEUU">Estados Unidos</button>
         <br>
       </div>
       <div class="col-sm-12">
-        <button type="button" class="btn btn-primary btn-sm btn-block" @click="SurAmerica()">Sur America</button>
+        <button type="button" class="btn btn-primary btn-sm btn-block" @click="SurAmerica">Sur America</button>
         <br>
       </div>
       <div class="col-sm-12">
-        <button type="button" class="btn btn-primary btn-sm btn-block" @click="Oceania()">Oceania</button>
+        <button type="button" class="btn btn-primary btn-sm btn-block" @click="Oceania">Oceania</button>
         <br>
       </div>
     </div>
     <div class="col-sm-6" v-if="servidor">
       <h1>Localmente</h1>
       <div class="col-sm-12">
-        <button type="button" class="btn btn-primary btn-sm btn-block" @click="local()">local</button>
+        <button type="button" class="btn btn-primary btn-sm btn-block" @click="local">local</button>
         <br>
       </div>
     </div>
@@ -55,24 +55,32 @@ export default {
   data() {
     return {
       servidor: false,
-      dns: "",
+      dominio: "",
     };
+  },
+  mounted() {
+
   },
   methods: {
     ecuador() {
-      this.dns = this.$store.state.pregunta.direccion
+      this.dominio = this.$store.state.pregunta.direccion
+      console.log("Espere...");
+      this.$http.get("http://127.0.0.1:8000/ws4/"+this.dominio, {
+      }).then(function(data) {
+        console.log(data)
+      });
     },
     EEUU() {
-      this.dns = this.$store.state.pregunta.direccion
+      this.dominio = this.$store.state.pregunta.direccion
     },
     SurAmerica() {
-      this.dns = this.$store.state.pregunta.direccion
+      this.dominio = this.$store.state.pregunta.direccion
     },
     Oceania() {
-      this.dns = this.$store.state.pregunta.direccion
+      this.dominio = this.$store.state.pregunta.direccion
     },
     local() {
-      this.dns = this.$store.state.pregunta.direccion
+      this.dominio = this.$store.state.pregunta.direccion
     },
     preguntas() {
       console.log(this.$store.state.pregunta.direccion);

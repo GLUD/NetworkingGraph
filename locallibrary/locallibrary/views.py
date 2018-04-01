@@ -4,8 +4,26 @@ import requests
 from django.http import HttpResponse
 from bs4 import BeautifulSoup
 
+
+"""
+Para la universidad si hay problemas de proxyDict
+https://stackoverflow.com/questions/8287628/proxies-with-python-requests-module#8287752
+
+"""
+
 def ws1(request, host):
     # america AmericaNorte
+
+    # http_proxy = "http://10.20.4.15:3128"
+    # https_proxy = "https://10.20.4.15:3128"
+    # ftp_proxy = "ftp://10.20.4.15:3128"
+    #
+    # proxyDict = {
+    # "http" : http_proxy,
+    # "https" : https_proxy,
+    # "ftp" : ftp_proxy
+    # }
+    # r = requests.get(url, headers=headers, proxies=proxyDict)
     page = requests.get('http://traceroute.physics.carleton.ca/cgi-bin/traceroute.pl?target=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
@@ -48,6 +66,16 @@ def ws1(request, host):
 
 def ws2(request, host):
     # america AmericaSur
+
+    # http_proxy = "http://10.20.4.15:3128"
+    # https_proxy = "https://10.20.4.15:3128"
+    # ftp_proxy = "ftp://10.20.4.15:3128"
+    #
+    # proxyDict = {
+    # "http" : http_proxy,
+    # "https" : https_proxy,
+    # "ftp" : ftp_proxy
+    # }
     page = requests.get('http://ping.unesp.br/cgi-bin/traceroute.pl?target=' + host + '&function=traceroute')
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
@@ -74,6 +102,16 @@ def ws2(request, host):
 
 def ws3(request, host):
     # asia
+
+    # http_proxy = "http://10.20.4.15:3128"
+    # https_proxy = "https://10.20.4.15:3128"
+    # ftp_proxy = "ftp://10.20.4.15:3128"
+    #
+    # proxyDict = {
+    # "http" : http_proxy,
+    # "https" : https_proxy,
+    # "ftp" : ftp_proxy
+    # }
     page = requests.get('http://v-www.ihep.ac.cn/cgi-bin/traceroute.pl?target=' + host + '&function=traceroute')
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
@@ -100,6 +138,16 @@ def ws3(request, host):
 
 def ws4(request, host):
     # europa
+
+    # http_proxy = "http://10.20.4.15:3128"
+    # https_proxy = "https://10.20.4.15:3128"
+    # ftp_proxy = "ftp://10.20.4.15:3128"
+    #
+    # proxyDict = {
+    # "http" : http_proxy,
+    # "https" : https_proxy,
+    # "ftp" : ftp_proxy
+    # }
     page = requests.get('http://nemox.net/traceroute/index.pl?t=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
@@ -126,6 +174,15 @@ def ws4(request, host):
 
 def ws5(request, host):
     # oceania
+    # http_proxy = "http://10.20.4.15:3128"
+    # https_proxy = "https://10.20.4.15:3128"
+    # ftp_proxy = "ftp://10.20.4.15:3128"
+    #
+    # proxyDict = {
+    # "http" : http_proxy,
+    # "https" : https_proxy,
+    # "ftp" : ftp_proxy
+    # }
     page = requests.get('http://www.hafey.org/cgi-bin/bgplg?cmd=traceroute&req=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
