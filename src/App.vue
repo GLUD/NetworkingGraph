@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="animated fadeInDown">
     <v-app :class="color">
       <header-app></header-app>
       <main>
