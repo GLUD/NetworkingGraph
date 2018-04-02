@@ -1,6 +1,6 @@
 <template>
 <footer>
-  <div class="animated fadeInDown">
+  <div class="animated fadeInDown text-right">
     <h6>GNU GENERAL PUBLIC LICENSE<br>Version 3, 29 June 2007</h6>
   </div>
 </footer>
