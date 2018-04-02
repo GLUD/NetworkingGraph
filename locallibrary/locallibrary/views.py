@@ -1,6 +1,8 @@
 import json
 import requests
 import os
+import subprocess
+
 from django.http import HttpResponse
 from bs4 import BeautifulSoup
 
@@ -233,3 +235,37 @@ def ws5(request, host):
 
 def ws6(request, host):
     pass
+
+# https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get
+# https://github.com/AgenciaImplementacion/remote-execution/blob/master/main.py#L60
+def local(request):
+    # http://localhost:8000/local?host=google.com
+    host = request.GET.get('host')
+    p = subprocess.Popen(['traceroute', host], cwd='/tmp', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p.wait()
+    rawResponse = p.stdout.read().decode('utf-8') #.replace('\n', '')
+    print('rawResponse', rawResponse)
+    lines = rawResponse.split('\n')
+    lines = lines[1:-1] # remove no info lines
+    data = []
+    for line in lines:
+        line = line.split('  ')
+        # print('line', line)
+        if line[1].startswith('*'):
+            continue
+        node = {}
+        node['num'] = line[0][1:]
+        host = line[1].split(' ')
+        node['hostname'] = host[0]
+        node['ip'] = host[1][1:-1]
+        try:
+            node['ttl1'] = line[2]
+            node['ttl2'] = line[3]
+            node['ttl3'] = line[4]
+        except IndexError:
+            node['ttl1'] = False
+            node['ttl2'] = False
+            node['ttl3'] = False
+        data.append(node)
+    #data = {'foo': 'bar', 'hello': 'world'}
+    return HttpResponse(json.dumps(data), content_type='application/json')
