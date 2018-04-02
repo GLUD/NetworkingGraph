@@ -6,6 +6,7 @@ import App from './App'
 import VueResource from 'vue-resource';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
+import { SweetModal, SweetModalTab } from 'sweet-modal-vue';
 import router from './js/router'
 import {
   store
@@ -31,6 +32,8 @@ Vue.component('footer-app', Footerapp)
 Vue.component('navbuttons-app', NavButtons)
 Vue.component('navatras-app', NavAtras)
 Vue.component('navadel-app', NavAdel)
+Vue.component('sweet-modal', SweetModal);
+Vue.component('sweet-modal-tab', SweetModalTab);
 // UI Components
 Vue.component('ui-button-circle-secondary', Buttoncirclesecondary)
 

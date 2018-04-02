@@ -71,6 +71,9 @@
   </div>
   <!-- Ya guardo el dato -->
   <!-- {{this.$store.state.pregunta.direccion}} -->
+  <sweet-modal ref="cargando" overlay-theme="light" hide-close-button blocking modal-theme="light">
+    <img class="imagenCargando" src="../../../assets/tenor.gif" alt="">
+  </sweet-modal>
 </div>
 </template>
 <!-- http://gcoch.github.io/D3-tutorial/asociar-datos.html -->
@@ -95,6 +98,7 @@ export default {
   },
   methods: {
     AmericaNorte() {
+      this.$refs.cargando.open();
       this.continente = "Ameria del Norte",
         this.pais = "Canada",
         this.nomServer = "netmon.physics.carleton.ca"
@@ -104,13 +108,16 @@ export default {
       axios.get('http://localhost:8000/ws1/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
+          this.$refs.cargando.close();
           this.items = response.data;
           console.log(this.item);
+
         }, (error) => {
           console.log('error', error);
         })
     },
     SurAmerica() {
+      this.$refs.cargando.open();
       this.continente = "Ameria del Sur",
         this.pais = "Brazil",
         this.nomServer = "ping.unesp.br"
@@ -120,13 +127,16 @@ export default {
       axios.get('http://localhost:8000/ws2/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
+          this.$refs.cargando.close();
           this.items = response.data;
           console.log(this.item);
+
         }, (error) => {
           console.log('error', error);
         })
     },
     asia() {
+      this.$refs.cargando.open();
       this.continente = "Asia",
         this.pais = "China",
         this.nomServer = "ihep.ac.cn"
@@ -136,13 +146,16 @@ export default {
       axios.get('http://localhost:8000/ws3/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
+          this.$refs.cargando.close();
           this.items = response.data;
           console.log(this.item);
+
         }, (error) => {
           console.log('error', error);
         })
     },
     europa() {
+      this.$refs.cargando.open();
       this.continente = "Europa",
         this.pais = "Austria",
         this.nomServer = "nemox.net"
@@ -152,13 +165,16 @@ export default {
       axios.get('http://localhost:8000/ws4/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
+          this.$refs.cargando.close();
           this.items = response.data;
           console.log(this.item);
+
         }, (error) => {
           console.log('error', error);
         })
     },
     oceania() {
+      this.$refs.cargando.open();
       this.continente = "Oceania",
         this.pais = "Australia",
         this.nomServer = "hafey.org"
@@ -168,13 +184,16 @@ export default {
       axios.get('http://localhost:8000/ws5/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
+          this.$refs.cargando.close();
           this.items = response.data;
           console.log(this.item);
+
         }, (error) => {
           console.log('error', error);
         })
     },
     local() {
+      this.$refs.cargando.open();
       this.continente = "Local"
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
@@ -182,8 +201,10 @@ export default {
       axios.get('http://localhost:8000/local?host=' + this.dominio)
         .then((response) => {
           console.log('success response', response);
+          this.$refs.cargando.close();
           this.items = response.data;
           console.log(this.item);
+
         }, (error) => {
           console.log('error', error);
         })
