@@ -25,4 +25,5 @@ urlpatterns = [
     path('ws3/<str:host>/', views.ws3),
     path('ws4/<str:host>/', views.ws4),
     path('ws5/<str:host>/', views.ws5),
+    path('local', views.local),
 ]
