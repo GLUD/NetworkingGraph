@@ -283,6 +283,7 @@ def ws5(request, host):
 def local(request):
     print("Local")
     print(request)
+    print("Espere...")
     # http://localhost:8000/local?host=google.com
     host = request.GET.get('host')
     p = subprocess.Popen(['traceroute', host], cwd='/tmp', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
