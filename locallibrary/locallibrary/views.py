@@ -1,6 +1,6 @@
 import json
 import requests
-
+import os
 from django.http import HttpResponse
 from bs4 import BeautifulSoup
 
@@ -47,7 +47,7 @@ def ws1(request, host):
     data = []
     for line in lines:
         line = line.split('  ')
-        print('line', line)
+        # print('line', line)
         if line[1].startswith('*'):
             continue
         node = {}
@@ -64,7 +64,7 @@ def ws1(request, host):
             node['ttl2'] = False
             node['ttl3'] = False
         data.append(node)
-    print(data)
+    # print(data)
     #data = {'foo': 'bar', 'hello': 'world'}
     return HttpResponse(json.dumps(data), content_type='application/json')
 
@@ -90,7 +90,7 @@ def ws2(request, host):
     data = []
     for line in lines:
         line = line.split('  ')
-        print('line', line)
+        # print('line', line)
         if line[1].startswith('*'):
             continue
         node = {}
@@ -131,7 +131,7 @@ def ws3(request, host):
     data = []
     for line in lines:
         line = line.split('  ')
-        print('line', line)
+        # print('line', line)
         if line[1].startswith('*'):
             continue
         node = {}
@@ -172,7 +172,7 @@ def ws4(request, host):
     data = []
     for line in lines:
         line = line.split('  ')
-        print('line', line)
+        # print('line', line)
         if line[1].startswith('*'):
             continue
         node = {}
@@ -212,7 +212,7 @@ def ws5(request, host):
     data = []
     for line in lines:
         line = line.split('  ')
-        print('line', line)
+        # print('line', line)
         if line[1].startswith('*'):
             continue
         node = {}
@@ -230,3 +230,6 @@ def ws5(request, host):
             node['ttl3'] = False
         data.append(node)
     return HttpResponse(json.dumps(data), content_type='application/json')
+
+def ws6(request, host):
+    pass
