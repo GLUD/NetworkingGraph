@@ -263,10 +263,6 @@ def ws5(request, host):
             node['ttl3'] = False
         data.append(node)
     return HttpResponse(json.dumps(data), content_type='application/json')
-
-def ws6(request, host):
-    pass
-
 # https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get
 # https://github.com/AgenciaImplementacion/remote-execution/blob/master/main.py#L60
 def local(request):

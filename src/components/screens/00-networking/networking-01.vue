@@ -175,7 +175,18 @@ export default {
         })
     },
     local() {
+      this.continente = "Local"
       this.dominio = this.$store.state.pregunta.direccion
+      console.log("Espere...");
+      // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
+      axios.get('http://localhost:8000/local?host=' + this.dominio)
+        .then((response) => {
+          console.log('success response', response);
+          this.items = response.data;
+          console.log(this.item);
+        }, (error) => {
+          console.log('error', error);
+        })
     },
     preguntas() {
       console.log(this.$store.state.pregunta.direccion);
