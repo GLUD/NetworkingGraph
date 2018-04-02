@@ -25,7 +25,7 @@
       </form>
     </div>
     <div class="col-sm-6 animated jello" v-if="servidor">
-      <h1>Remotamente</h1>
+      <h3>trazar ruta desde servidor remoto</h3>
 
       <div class="col-sm-12 animated bounceInRight dura_1">
         <button type="button" class="btn btn-primary btn-sm btn-block" @click="AmericaNorte">America del Norte</button>
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="col-sm-6 animated jello" v-if="servidor">
-      <h1>Localmente</h1>
+      <h3>trazar ruta desde servidor local</h3>
       <div class="col-sm-12 animated bounceInRight dura_1">
         <button type="button" class="btn btn-primary btn-sm btn-block" @click="local">local</button>
         <br>
@@ -72,7 +72,7 @@
   <!-- Ya guardo el dato -->
   <!-- {{this.$store.state.pregunta.direccion}} -->
   <sweet-modal ref="cargando" overlay-theme="light" hide-close-button blocking modal-theme="light">
-    <img class="imagenCargando" src="../../../assets/tenor.gif" alt="">
+    <img src="../../../assets/tenor.gif" alt="">
   </sweet-modal>
 </div>
 </template>
