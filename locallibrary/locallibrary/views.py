@@ -13,8 +13,25 @@ https://stackoverflow.com/questions/8287628/proxies-with-python-requests-module#
 
 """
 
+    """
+        rawResponse
+    traceroute: Warning: Multiple interfaces found; using 134.117.14.35 @ hme0
+    traceroute to 172.217.1.174 (172.217.1.174), 30 hops max, 40 byte packets
+     1  unix-gate.physics.carleton.ca (134.117.14.1)  99.131 ms  1.011 ms  0.775 ms
+     2  10.50.254.3 (10.50.254.3)  0.554 ms  1.282 ms  0.631 ms
+     3  10.30.34.1 (10.30.34.1)  1.238 ms 10.30.33.1 (10.30.33.1)  0.561 ms 10.30.34.1 (10.30.34.1)  0.563 ms
+     4  10.30.53.1 (10.30.53.1)  28.513 ms  0.826 ms  0.732 ms
+     5  134.117.254.242 (134.117.254.242)  0.880 ms  0.961 ms  0.816 ms
+     6  10.30.58.1 (10.30.58.1)  1.038 ms  1.135 ms  0.951 ms
+     7  * * *
+     8  * * *
+     9  *
+    """
+
 def ws1(request, host):
     print("America del Norte")
+    print("Canada")
+    print("physics.carleton.ca")
     print(request,' ', host)
     print("Espere...")
     # america AmericaNorte
@@ -33,20 +50,7 @@ def ws1(request, host):
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
     print('rawResponse', rawResponse)
-    """
-        rawResponse
-    traceroute: Warning: Multiple interfaces found; using 134.117.14.35 @ hme0
-    traceroute to 172.217.1.174 (172.217.1.174), 30 hops max, 40 byte packets
-     1  unix-gate.physics.carleton.ca (134.117.14.1)  99.131 ms  1.011 ms  0.775 ms
-     2  10.50.254.3 (10.50.254.3)  0.554 ms  1.282 ms  0.631 ms
-     3  10.30.34.1 (10.30.34.1)  1.238 ms 10.30.33.1 (10.30.33.1)  0.561 ms 10.30.34.1 (10.30.34.1)  0.563 ms
-     4  10.30.53.1 (10.30.53.1)  28.513 ms  0.826 ms  0.732 ms
-     5  134.117.254.242 (134.117.254.242)  0.880 ms  0.961 ms  0.816 ms
-     6  10.30.58.1 (10.30.58.1)  1.038 ms  1.135 ms  0.951 ms
-     7  * * *
-     8  * * *
-     9  *
-    """
+
     lines = rawResponse.split('\n')
     lines = lines[3:] # remove no info lines
     data = []
@@ -83,6 +87,8 @@ def ws1(request, host):
 
 def ws2(request, host):
     print("America del sur")
+    print("Brazil")
+    print("")
     print(request,' ', host)
     print("Espere...")
     # america AmericaSur
@@ -133,6 +139,8 @@ def ws2(request, host):
 
 def ws3(request, host):
     print("Asia")
+    print("China")
+    print("ihep.ac.cn")
     print(request,' ', host)
     print("Espere...")
     # asia
@@ -183,6 +191,8 @@ def ws3(request, host):
 
 def ws4(request, host):
     print("Europa")
+    print("Austria")
+    print("nemox.net")
     print(request,' ', host)
     print("Espere...")
     # europa
@@ -234,6 +244,8 @@ def ws4(request, host):
 
 def ws5(request, host):
     print("Oceania")
+    print("Australia")
+    print("hafey.org")
     print(request,' ', host)
     print("Espere...")
     # oceania

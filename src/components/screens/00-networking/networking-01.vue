@@ -55,7 +55,7 @@
         <br>
       </div>
     </div>
-    <div class="grafico col-sm-6">
+    <div class="grafico col-sm-6" v-if="info">
       <h3 class="animated fadeInDown dura_3">{{continente}}</h3>
       <h4 class="animated fadeInDown dura_4">{{pais}}</h4>
       <h5 class="animated fadeInDown dura_5">{{nomServer}}</h5>
@@ -68,7 +68,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-6 text-justify">
+    <div class="col-sm-6 text-justify" v-if="info">
       <h3 class="animated fadeInDown dura_3">{{continente}}</h3>
       <h4 class="animated fadeInDown dura_4">{{pais}}</h4>
       <h5 class="animated fadeInDown dura_5">{{nomServer}}</h5>
@@ -100,6 +100,7 @@ export default {
       continente: "",
       pais: "",
       nomServer: "",
+      info: false,
       // otro: false,
       items: [],
     };
@@ -110,6 +111,7 @@ export default {
   methods: {
     AmericaNorte() {
       this.$refs.cargando.open();
+      this.info = false
       this.continente = "Ameria del Norte",
         this.pais = "Canada",
         this.nomServer = "netmon.physics.carleton.ca"
@@ -120,6 +122,7 @@ export default {
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
+          this.info = true
           this.items = response.data;
           console.log(this.item);
 
@@ -129,6 +132,7 @@ export default {
     },
     SurAmerica() {
       this.$refs.cargando.open();
+      this.info = false
       this.continente = "Ameria del Sur",
         this.pais = "Brazil",
         this.nomServer = "ping.unesp.br"
@@ -139,6 +143,7 @@ export default {
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
+          this.info = true
           this.items = response.data;
           console.log(this.item);
 
@@ -148,6 +153,7 @@ export default {
     },
     asia() {
       this.$refs.cargando.open();
+      this.info = false
       this.continente = "Asia",
         this.pais = "China",
         this.nomServer = "ihep.ac.cn"
@@ -158,6 +164,7 @@ export default {
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
+          this.info = true
           this.items = response.data;
           console.log(this.item);
 
@@ -167,6 +174,7 @@ export default {
     },
     europa() {
       this.$refs.cargando.open();
+      this.info = false
       this.continente = "Europa",
         this.pais = "Austria",
         this.nomServer = "nemox.net"
@@ -177,6 +185,7 @@ export default {
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
+          this.info = true
           this.items = response.data;
           console.log(this.item);
 
@@ -185,7 +194,8 @@ export default {
         })
     },
     oceania() {
-      this.$refs.cargando.open();
+      this.$refs.cargando.open()
+      this.info = false
       this.continente = "Oceania",
         this.pais = "Australia",
         this.nomServer = "hafey.org"
@@ -196,6 +206,7 @@ export default {
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
+          this.info = true
           this.items = response.data;
           console.log(this.item);
 
@@ -206,12 +217,16 @@ export default {
     local() {
       this.$refs.cargando.open();
       this.continente = "Local"
+      this.pais = ""
+      this.nomServer = ""
+      this.info = false
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
       // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
       axios.get('http://localhost:8000/local?host=' + this.dominio)
         .then((response) => {
           console.log('success response', response);
+          this.info = true
           this.$refs.cargando.close();
           this.items = response.data;
           console.log(this.item);
@@ -243,38 +258,38 @@ export default {
     margin-top: -1.5em;
 }
 .grafico {
-  ul {
-      list-style-type: none;
-  }
-  #lista-nodos li {
-      position: relative;
-  }
-  .num {
-      border-radius: 50%;
-      background: #ffed00;
-      padding: 0;
-      width: 30px;
-      height: 30px;
-      text-align: center;
-      vertical-align: middle;
-      margin-left: 8px;
-  }
-  .ip {
-      position: absolute;
-      top: 1px;
-      left: 50px;
-  }
-  .linea {
-      width: 3px;
-      height: 300px;
-      background: #000;
-      margin-left: 21.5px;
-  }
-  .ttl {
-      position: absolute;
-      top: 100px;
-      left: 100px;
-  }
+    ul {
+        list-style-type: none;
+    }
+    #lista-nodos li {
+        position: relative;
+    }
+    .num {
+        border-radius: 50%;
+        background: #ffed00;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        vertical-align: middle;
+        margin-left: 8px;
+    }
+    .ip {
+        position: absolute;
+        top: 1px;
+        left: 50px;
+    }
+    .linea {
+        width: 3px;
+        height: 300px;
+        background: #000;
+        margin-left: 21.5px;
+    }
+    .ttl {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+    }
 }
 
 .opcionDiferente {
