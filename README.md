@@ -2,9 +2,24 @@
 
 Laboratorio traza de rutas locales y remotas
 
-> A Vue.js project
+> A Vue.js project with django server
 
-## Build Setup
+## Buid Setup django
+
+In the folder locallibrary/locallibrary is the django server
+ ``` bash
+ #install dependencies
+ sudo pip3 install -r requirements.txt
+
+ # serve with hot reload at localhost:8083
+ ## For GNU/Linux
+ ./start.sh or python3 manage.py runserver
+
+ ## For Windows
+python3 manage.py runserver
+ ```
+
+## Build Setup vuejs
 
 ``` bash
 # install dependencies
