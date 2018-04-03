@@ -55,18 +55,29 @@
         <br>
       </div>
     </div>
-    <div class="col-sm-12 animated fadeInUp">
+    <div class="grafico col-sm-6">
       <h3 class="animated fadeInDown dura_3">{{continente}}</h3>
       <h4 class="animated fadeInDown dura_4">{{pais}}</h4>
       <h5 class="animated fadeInDown dura_5">{{nomServer}}</h5>
       <ul id="example-1">
         <li style="position:relative;" v-for="(item,index) in items">
           <div class="num" :class="'animated fadeInLeft dura_'+index"> {{ item.num }} </div>
-          <div class="ip" :class="'animated fadeInLeft dura_'+index"> {{ item.hostname }} <br> {{ item.ip }} </div>
+          <div class="ip" :class="'animated fadeInLeft dura_'+index"> {{ item.hostname }} <br> {{ item.ip }} <br> {{ item.SA }}</div>
           <div class="linea" :class="'animated fadeInUp dura_'+index"></div>
           <div class="ttl" :class="'animated fadeInLeft dura_'+index"> {{ item.ttl1 }} <br> {{ item.ttl2 }} <br> {{ item.ttl3 }} </div>
         </li>
       </ul>
+    </div>
+    <div class="col-sm-6 text-justify">
+      <h3 class="animated fadeInDown dura_3">{{continente}}</h3>
+      <h4 class="animated fadeInDown dura_4">{{pais}}</h4>
+      <h5 class="animated fadeInDown dura_5">{{nomServer}}</h5>
+      <ol id="example-1">
+        <li v-for="(item,index) in items">
+          <span :class="'animated fadeInLeft dura_'+index"> {{ item.hostname }} <br> {{ item.ip }} <br> {{ item.SA }}</span>
+          <span :class="'animated fadeInLeft dura_'+index"> {{ item.ttl1 }} <br> {{ item.ttl2 }} <br> {{ item.ttl3 }} </span>
+        </li>
+      </ol>
     </div>
   </div>
   <!-- Ya guardo el dato -->
@@ -231,38 +242,41 @@ export default {
     width: 30%;
     margin-top: -1.5em;
 }
-ul {
-    list-style-type: none;
+.grafico {
+  ul {
+      list-style-type: none;
+  }
+  #lista-nodos li {
+      position: relative;
+  }
+  .num {
+      border-radius: 50%;
+      background: #ffed00;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      vertical-align: middle;
+      margin-left: 8px;
+  }
+  .ip {
+      position: absolute;
+      top: 1px;
+      left: 50px;
+  }
+  .linea {
+      width: 3px;
+      height: 300px;
+      background: #000;
+      margin-left: 21.5px;
+  }
+  .ttl {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+  }
 }
-#lista-nodos li {
-    position: relative;
-}
-.num {
-    border-radius: 50%;
-    background: #ffed00;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    vertical-align: middle;
-    margin-left: 8px;
-}
-.ip {
-    position: absolute;
-    top: 1px;
-    left: 50px;
-}
-.linea {
-    width: 3px;
-    height: 300px;
-    background: #000;
-    margin-left: 21.5px;
-}
-.ttl {
-    position: absolute;
-    top: 100px;
-    left: 100px;
-}
+
 .opcionDiferente {
     #entrada {
         background-color: #DDD;

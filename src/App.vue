@@ -31,5 +31,7 @@ export default {
 </script>
 
 <style src="./sass/styles.scss" lang="scss">
-
+body, html{
+  height: 100vh;
+}
 </style>

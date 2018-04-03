@@ -213,6 +213,7 @@ def ws4(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
+        node['SA'] = line[1]
         try:
             node['ttl1'] = line[2]
         except IndexError:
@@ -262,6 +263,7 @@ def ws5(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
+        node['SA'] = line[1]
         try:
             node['ttl1'] = line[2]
         except IndexError:

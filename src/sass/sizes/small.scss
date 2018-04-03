@@ -28,20 +28,6 @@
     }
   }
 }
-// Marcar contenidos vistos
-.elem-visto,
-.elem-visto-cen {
-  &:after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: 0;
-    width: 35px;
-    height: 35px;
-    background-image: url("../assets/logos-icons/ok-bullet.png");
-    background-size: contain;
-  }
-}
 
 .elem-visto-cen {
   &:after {
@@ -51,3 +37,7 @@
     left: 0;
   }
 }
+
+// body, html{
+//   height: 100vh;
+// }
