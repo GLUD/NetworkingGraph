@@ -13,20 +13,20 @@ https://stackoverflow.com/questions/8287628/proxies-with-python-requests-module#
 
 """
 
-    """
-        rawResponse
-    traceroute: Warning: Multiple interfaces found; using 134.117.14.35 @ hme0
-    traceroute to 172.217.1.174 (172.217.1.174), 30 hops max, 40 byte packets
-     1  unix-gate.physics.carleton.ca (134.117.14.1)  99.131 ms  1.011 ms  0.775 ms
-     2  10.50.254.3 (10.50.254.3)  0.554 ms  1.282 ms  0.631 ms
-     3  10.30.34.1 (10.30.34.1)  1.238 ms 10.30.33.1 (10.30.33.1)  0.561 ms 10.30.34.1 (10.30.34.1)  0.563 ms
-     4  10.30.53.1 (10.30.53.1)  28.513 ms  0.826 ms  0.732 ms
-     5  134.117.254.242 (134.117.254.242)  0.880 ms  0.961 ms  0.816 ms
-     6  10.30.58.1 (10.30.58.1)  1.038 ms  1.135 ms  0.951 ms
-     7  * * *
-     8  * * *
-     9  *
-    """
+"""
+    rawResponse
+traceroute: Warning: Multiple interfaces found; using 134.117.14.35 @ hme0
+traceroute to 172.217.1.174 (172.217.1.174), 30 hops max, 40 byte packets
+ 1  unix-gate.physics.carleton.ca (134.117.14.1)  99.131 ms  1.011 ms  0.775 ms
+ 2  10.50.254.3 (10.50.254.3)  0.554 ms  1.282 ms  0.631 ms
+ 3  10.30.34.1 (10.30.34.1)  1.238 ms 10.30.33.1 (10.30.33.1)  0.561 ms 10.30.34.1 (10.30.34.1)  0.563 ms
+ 4  10.30.53.1 (10.30.53.1)  28.513 ms  0.826 ms  0.732 ms
+ 5  134.117.254.242 (134.117.254.242)  0.880 ms  0.961 ms  0.816 ms
+ 6  10.30.58.1 (10.30.58.1)  1.038 ms  1.135 ms  0.951 ms
+ 7  * * *
+ 8  * * *
+ 9  *
+"""
 
 def ws1(request, host):
     print("America del Norte")
@@ -49,6 +49,10 @@ def ws1(request, host):
     page = requests.get('http://traceroute.physics.carleton.ca/cgi-bin/traceroute.pl?target=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
+    archivo = open('AmericaNorte.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
     print('rawResponse', rawResponse)
 
     lines = rawResponse.split('\n')
@@ -105,6 +109,10 @@ def ws2(request, host):
     page = requests.get('http://ping.unesp.br/cgi-bin/traceroute.pl?target=' + host + '&function=traceroute')
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
+    archivo = open('AmericaSur.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[3:-2] # remove no info lines
@@ -157,6 +165,10 @@ def ws3(request, host):
     page = requests.get('http://v-www.ihep.ac.cn/cgi-bin/traceroute.pl?target=' + host + '&function=traceroute')
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
+    archivo = open('Asia.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[3:-2] # remove no info lines
@@ -209,6 +221,10 @@ def ws4(request, host):
     page = requests.get('http://nemox.net/traceroute/index.pl?t=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
+    archivo = open('Europa.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[1:-1] # remove no info lines
@@ -261,6 +277,10 @@ def ws5(request, host):
     page = requests.get('http://www.hafey.org/cgi-bin/bgplg?cmd=traceroute&req=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
+    archivo = open('Oceania.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[1:-3] # remove no info lines
@@ -303,6 +323,10 @@ def local(request):
     p = subprocess.Popen(['traceroute', host], cwd='/tmp', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     p.wait()
     rawResponse = p.stdout.read().decode('utf-8') #.replace('\n', '')
+    archivo = open('Local.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[1:-1] # remove no info lines
