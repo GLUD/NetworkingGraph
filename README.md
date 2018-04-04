@@ -1,4 +1,8 @@
 # NetworkingGraph
+# Authors
+> Andres Mauricio Acosta Pulido 
+> Daniel Leal Lara
+
 
 Laboratorio traza de rutas locales y remotas
 
