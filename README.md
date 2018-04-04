@@ -1,6 +1,7 @@
 # NetworkingGraph
 # Authors
-> Andres Mauricio Acosta Pulido 
+> Andres Mauricio Acosta Pulido
+
 > Daniel Leal Lara
 
 
