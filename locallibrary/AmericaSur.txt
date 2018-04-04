@@ -1,0 +1,13 @@
+
+Executing exec(traceroute -m 30 -q 3 172.217.29.174 140)
+traceroute to 172.217.29.174 (172.217.29.174), 30 hops max, 140 byte packets
+ 1  gw-pinger.unesp.br (200.145.255.42)  0.553 ms  0.686 ms  0.781 ms
+ 2  dc-bf.net.unesp.br (200.145.255.45)  0.630 ms  0.722 ms  0.881 ms
+ 3  asr-rt.net.unesp.br (200.145.0.254)  2.110 ms  2.551 ms  2.525 ms
+ 4  200-136-41-45.ansp.br (200.136.41.45)  1.615 ms  1.597 ms  1.364 ms
+ 5  sp-ansp.bkb.rnp.br (200.143.254.181)  1.928 ms  1.911 ms  1.888 ms
+ 6  as15169.saopaulo.sp.ix.br (187.16.216.55)  2.440 ms 170.79.215.3 (170.79.215.3)  2.533 ms as15169.saopaulo.sp.ix.br (187.16.216.55)  2.273 ms
+ 7  108.170.245.193 (108.170.245.193)  2.734 ms 108.170.245.225 (108.170.245.225)  2.368 ms  2.640 ms
+ 8  209.85.143.239 (209.85.143.239)  3.014 ms 209.85.143.237 (209.85.143.237)  3.134 ms  2.661 ms
+ 9  gru10s02-in-f174.1e100.net (172.217.29.174)  2.757 ms  2.393 ms  2.895 ms
+traceroute -m 30 -q 3 172.217.29.174 140 took 0secs. Total time=0secs. user=www-data

@@ -49,10 +49,10 @@ def ws1(request, host):
     page = requests.get('http://traceroute.physics.carleton.ca/cgi-bin/traceroute.pl?target=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
-    archivo = open('AmericaNorte.txt', 'w')
-    print("Generando Archivo ...")
-    archivo.write(rawResponse)
-    archivo.close()
+    # archivo = open('AmericaNorte.txt', 'w')
+    # print("Generando Archivo ...")
+    # archivo.write(rawResponse)
+    # archivo.close()
     print('rawResponse', rawResponse)
 
     lines = rawResponse.split('\n')
@@ -86,6 +86,11 @@ def ws1(request, host):
         data.append(node)
     # print(data)
     #data = {'foo': 'bar', 'hello': 'world'}
+    archivo = open('AmericaNorte.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
+    print("¡Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -109,10 +114,6 @@ def ws2(request, host):
     page = requests.get('http://ping.unesp.br/cgi-bin/traceroute.pl?target=' + host + '&function=traceroute')
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
-    archivo = open('AmericaSur.txt', 'w')
-    print("Generando Archivo ...")
-    archivo.write(rawResponse)
-    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[3:-2] # remove no info lines
@@ -142,6 +143,11 @@ def ws2(request, host):
         except IndexError:
             node['ttl3'] = False
         data.append(node)
+    archivo = open('AmericaSur.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
+    print("¡Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -165,10 +171,6 @@ def ws3(request, host):
     page = requests.get('http://v-www.ihep.ac.cn/cgi-bin/traceroute.pl?target=' + host + '&function=traceroute')
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
-    archivo = open('Asia.txt', 'w')
-    print("Generando Archivo ...")
-    archivo.write(rawResponse)
-    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[3:-2] # remove no info lines
@@ -198,6 +200,11 @@ def ws3(request, host):
         except IndexError:
             node['ttl3'] = False
         data.append(node)
+    archivo = open('Asia.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
+    print("¡Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -221,10 +228,6 @@ def ws4(request, host):
     page = requests.get('http://nemox.net/traceroute/index.pl?t=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
-    archivo = open('Europa.txt', 'w')
-    print("Generando Archivo ...")
-    archivo.write(rawResponse)
-    archivo.close()
     print('rawResponse', rawResponse)
     lines = rawResponse.split('\n')
     lines = lines[1:-1] # remove no info lines
@@ -239,7 +242,6 @@ def ws4(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
-        node['SA'] = line[1]
         try:
             node['ttl1'] = line[2]
         except IndexError:
@@ -255,6 +257,11 @@ def ws4(request, host):
         except IndexError:
             node['ttl3'] = False
         data.append(node)
+    archivo = open('Europa.txt', 'w')
+    print("Generando Archivo ...")
+    archivo.write(rawResponse)
+    archivo.close()
+    print("¡Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -277,11 +284,12 @@ def ws5(request, host):
     page = requests.get('http://www.hafey.org/cgi-bin/bgplg?cmd=traceroute&req=' + host)
     soup = BeautifulSoup(page.content, 'html.parser')
     rawResponse = soup.find_all('pre')[0].get_text()
+    print('rawResponse', rawResponse)
     archivo = open('Oceania.txt', 'w')
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print('rawResponse', rawResponse)
+    print("¡Archivo Generado!")
     lines = rawResponse.split('\n')
     lines = lines[1:-3] # remove no info lines
     data = []
@@ -295,7 +303,6 @@ def ws5(request, host):
         host = line[1].split(' ')
         node['hostname'] = host[0]
         node['ip'] = host[1][1:-1]
-        node['SA'] = line[1]
         try:
             node['ttl1'] = line[2]
         except IndexError:
@@ -323,11 +330,12 @@ def local(request):
     p = subprocess.Popen(['traceroute', host], cwd='/tmp', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     p.wait()
     rawResponse = p.stdout.read().decode('utf-8') #.replace('\n', '')
+    print('rawResponse', rawResponse)
     archivo = open('Local.txt', 'w')
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print('rawResponse', rawResponse)
+    print("¡Archivo Generado!")
     lines = rawResponse.split('\n')
     lines = lines[1:-1] # remove no info lines
     data = []

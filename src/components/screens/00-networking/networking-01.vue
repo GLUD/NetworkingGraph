@@ -55,29 +55,23 @@
         <br>
       </div>
     </div>
-    <div class="grafico col-sm-6" v-if="info">
+    <div class="col-sm-11" v-if="info">
+      <div class="col-sm-1"></div>
       <h3 class="animated fadeInDown dura_3">{{continente}}</h3>
       <h4 class="animated fadeInDown dura_4">{{pais}}</h4>
       <h5 class="animated fadeInDown dura_5">{{nomServer}}</h5>
+    </div>
+    <br>
+      <div class="col-sm-4"></div>
+    <div class="grafico col-sm-8 text-left" v-if="info">
       <ul id="example-1">
         <li style="position:relative;" v-for="(item,index) in items">
           <div class="num" :class="'animated fadeInLeft dura_'+index"> {{ item.num }} </div>
-          <div class="ip" :class="'animated fadeInLeft dura_'+index"> {{ item.hostname }} <br> {{ item.ip }} <br> {{ item.SA }}</div>
+          <div class="ip" :class="'animated fadeInLeft dura_'+index"> {{ item.hostname }} <br> {{ item.ip }}</div>
           <div class="linea" :class="'animated fadeInUp dura_'+index"></div>
           <div class="ttl" :class="'animated fadeInLeft dura_'+index"> {{ item.ttl1 }} <br> {{ item.ttl2 }} <br> {{ item.ttl3 }} </div>
         </li>
       </ul>
-    </div>
-    <div class="col-sm-6 text-justify" v-if="info">
-      <h3 class="animated fadeInDown dura_3">{{continente}}</h3>
-      <h4 class="animated fadeInDown dura_4">{{pais}}</h4>
-      <h5 class="animated fadeInDown dura_5">{{nomServer}}</h5>
-      <ol id="example-1">
-        <li v-for="(item,index) in items">
-          <span :class="'animated fadeInLeft dura_'+index"> {{ item.hostname }} <br> {{ item.ip }} <br> {{ item.SA }}</span>
-          <span :class="'animated fadeInLeft dura_'+index"> {{ item.ttl1 }} <br> {{ item.ttl2 }} <br> {{ item.ttl3 }} </span>
-        </li>
-      </ol>
     </div>
   </div>
   <!-- Ya guardo el dato -->
