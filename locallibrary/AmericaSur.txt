@@ -1,12 +1,13 @@
 
-Executing exec(traceroute -m 30 -q 3 31.13.85.36 140)
-traceroute to 31.13.85.36 (31.13.85.36), 30 hops max, 140 byte packets
- 1  gw-pinger.unesp.br (200.145.255.42)  0.705 ms  0.699 ms  0.924 ms
- 2  dc-bf.net.unesp.br (200.145.255.45)  0.640 ms  0.775 ms  0.955 ms
- 3  asr-rt.net.unesp.br (200.145.0.254)  1.570 ms  1.543 ms  1.611 ms
- 4  as32934.saopaulo.sp.ix.br (187.16.222.61)  3.277 ms  3.274 ms  3.263 ms
- 5  po121.asw02.gru2.tfbnw.net (157.240.41.236)  2.710 ms  2.677 ms po121.asw01.gru2.tfbnw.net (157.240.41.108)  2.693 ms
- 6  po242.psw01.gru2.tfbnw.net (31.13.31.89)  2.660 ms po211.psw01.gru2.tfbnw.net (31.13.27.161)  2.425 ms po231.psw03.gru2.tfbnw.net (157.240.40.197)  2.698 ms
- 7  173.252.67.53 (173.252.67.53)  2.794 ms 173.252.67.177 (173.252.67.177)  2.853 ms  2.864 ms
- 8  edge-star-mini-shv-01-gru2.facebook.com (31.13.85.36)  2.817 ms  2.811 ms  2.832 ms
-traceroute -m 30 -q 3 31.13.85.36 140 took 0secs. Total time=0secs. user=www-data
+Executing exec(traceroute -m 30 -q 3 172.217.29.174 140)
+traceroute to 172.217.29.174 (172.217.29.174), 30 hops max, 140 byte packets
+ 1  gw-pinger.unesp.br (200.145.255.42)  0.641 ms  0.790 ms  0.910 ms
+ 2  dc-bf.net.unesp.br (200.145.255.45)  0.661 ms  0.846 ms  0.990 ms
+ 3  asr-rt.net.unesp.br (200.145.0.254)  22.871 ms  22.852 ms  22.839 ms
+ 4  200-136-41-45.ansp.br (200.136.41.45)  11.946 ms  12.067 ms  11.895 ms
+ 5  sp-ansp.bkb.rnp.br (200.143.254.181)  2.229 ms  2.192 ms  2.193 ms
+ 6  170.79.215.3 (170.79.215.3)  2.935 ms  2.889 ms as15169.saopaulo.sp.ix.br (187.16.218.58)  4.486 ms
+ 7  108.170.245.225 (108.170.245.225)  3.424 ms 108.170.245.193 (108.170.245.193)  3.380 ms 108.170.245.225 (108.170.245.225)  3.388 ms
+ 8  209.85.143.237 (209.85.143.237)  3.086 ms  3.108 ms  3.083 ms
+ 9  gru10s02-in-f174.1e100.net (172.217.29.174)  3.147 ms  2.869 ms  2.798 ms
+traceroute -m 30 -q 3 172.217.29.174 140 took 1secs. Total time=1secs. user=www-data

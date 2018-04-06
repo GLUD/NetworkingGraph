@@ -15,13 +15,13 @@
         <label class="col-sm-3 radio-inline animated fadeInLeft dura_3">
             <input type="radio" name="facebook" value="facebook.com" @click="servidor=true" v-model="GuardarDato">3. Facebook.com
           </label>
-        <!-- <label class="col-sm-3 radio-inline animated fadeInLeft dura_3">
-              <input type="radio" name="facebook" value="facebook.com" @click="otro = true" v-model="GuardarDato">4. ¿Otro?
-        </label> -->
-        <!-- <div class="opcionDiferente fadeInLeft dura_1" v-if="otro == true" @click="servidor = true">
+        <label class="col-sm-3 radio-inline animated fadeInLeft dura_3">
+              <input type="radio" name="otros" value="otros.com" @click="otro = true" v-model="GuardarDato">4. ¿Otro?
+        </label>
+        <div class="opcionDiferente fadeInLeft dura_1" v-if="otro == true" @click="servidor = true">
           <strong>¿Cuál?:</strong>
-          <input id="entrada" type="text" name="otro dominio" v-model="GuardarDato" @click="servidor=true">
-        </div> -->
+          <input id="entrada" type="text" name="otro dominio" v-model="GuardarDato">
+        </div>
       </form>
     </div>
     <div class="col-sm-6 animated jello" v-if="servidor">
@@ -95,7 +95,7 @@ export default {
       pais: "",
       nomServer: "",
       info: false,
-      // otro: false,
+      otro: false,
       items: [],
     };
   },
