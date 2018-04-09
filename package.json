@@ -5,9 +5,10 @@
   "author": "MauricioAcosta <andres.taamap@gmail.com>",
   "private": true,
   "scripts": {
-    "webscrapy": "python3 locallibrary/manage.py runserver",
+    "start": "npm run webscrapy && npm run start-server",
+    "webscrapy": "python3 locallibrary/manage.py runserver &",
     "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
+    "start-server": "node build/dev-server.js",
     "build": "node build/build.js",
     "clean": "rimraf ./dist/*",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
