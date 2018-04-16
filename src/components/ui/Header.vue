@@ -22,8 +22,6 @@ export default {
 </script>
 
 <style lang="scss" scope>
-@import "../../sass/helpers/variables.scss";
-
 header {
     width: 100%;
     min-height: 60px;
@@ -38,7 +36,7 @@ header {
     z-index: 10 !important;
     .nombre {
         font-size: 1.1em;
-        color: $primary-red;
+        color: rgb(213, 53, 68);
     }
     p {
         margin-bottom: 0;
@@ -50,5 +48,4 @@ header {
     z-index: 6;
     margin-right: 20px;
 }
-
 </style>

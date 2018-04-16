@@ -1,6 +1,8 @@
 <template>
 <div class="container">
-  <router-link aria-label="Página anterior" class="rout-bot bot-left hvr-grow animated fadeInRight dura_1" to="/"></router-link>
+  <router-link aria-label="Página anterior" to="/">
+    <img class="hvr-grow flechas-atras" src="../../../assets/logos-icons/flechas-atras.jpg" alt="fecha atras">
+  </router-link>
   <div class="row text-center">
     <div class="col-sm-12">
       <h4 class="animated rubberBand">Seleccioné dominio</h4>
@@ -62,7 +64,7 @@
       <h5 class="animated fadeInDown dura_5">{{nomServer}}</h5>
     </div>
     <br>
-      <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
     <div class="grafico col-sm-8 text-left" v-if="info">
       <ul id="example-1">
         <li style="position:relative;" v-for="(item,index) in items">
@@ -246,7 +248,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .imagenUD {
     width: 30%;
     margin-top: -1.5em;

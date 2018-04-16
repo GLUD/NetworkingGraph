@@ -1,18 +1,15 @@
 <template>
 <div class="container">
-  <div class="jumbotron text-center animated pulse">
-    <h1>Networking Graph</h1>
+  <div class="jumbotron text-center">
+    <h2>Networking Graph</h2>
     <p>Laboratorio traza de rutas locales y remotas</p>
-    <img class="rounded imagenUD  animated pulse dura_2" src="../assets/logos-icons/escudoUD.png" alt="Cinque Terre">
-    <br>
-    <h2>Ingenieria de sistemas</h2>
-    <h3>Autores</h3>
-    <h4>Andres Mauricio Acosta Pulido 20142020111</h4>
-    <h4>Daniel David Leal Lara 20151020057</h4>
-    <br>
-    <div class="col-sm-12 text-center animated flip dura_3">
+    <div class="col-sm-12">
+      <img class="imagenUD" src="../assets/logos-icons/escudoUD.png">
+    </div>
+    <h3>Ingenieria de sistemas</h3>
+    <div class="col-sm-12 text-center animated flip dura_2">
       <router-link :to="linksPath+'1'" aria-label="Iniciar el curso">
-        <ui-button-circle-secondary aria-hidden="true" class="animated bounceIn dura_1" aria=""></ui-button-circle-secondary>
+        <button-inicio aria-hidden="true" class="animated bounceIn dura_1" aria=""></button-inicio>
       </router-link>
     </div>
   </div>
@@ -34,9 +31,9 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style>
 .imagenUD {
-    width: 30%;
-    margin-top: -1.5em;
+  width: 20% !important;
+  margin-top: -1.5em !important;
 }
 </style>
