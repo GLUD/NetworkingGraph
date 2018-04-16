@@ -1,4 +1,17 @@
-html,body {
+body,
+html {
   width: 100%;
   height: 100%;
+}
+
+.imagenUD {
+  width: 20%;
+  margin-top: -1.5em;
+}
+
+.flechas-atras {
+  width: 6%;
+  position: fixed;
+  top: 40%;
+  left: 2em;
 }

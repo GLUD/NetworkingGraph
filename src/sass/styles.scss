@@ -1,7 +1,4 @@
 $fa-font-path: "~font-awesome/fonts";
-@import '~font-awesome/scss/font-awesome.scss';
-@import './fonts/fonts.scss';
-@import './helpers/variables';
 @import './helpers/mixins';
 @import './libs/animate';
 @import './libs/hover';
@@ -9,6 +6,3 @@ $fa-font-path: "~font-awesome/fonts";
 @import './sizes/small';
 @import './sizes/medium';
 @import './sizes/large';
-@import './ui/acces-bot';
-
-
