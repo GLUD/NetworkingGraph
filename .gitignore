@@ -11,3 +11,11 @@ yarn-error.log
 *.njsproj
 *.sln
 package-lock.json
+/nbproject/private/
+AmericaNorte.txt
+AmericaSur.txt
+Asia.txt
+Oceania.txt
+Local.txt
+Europa.txt
+
