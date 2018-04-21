@@ -5,7 +5,8 @@
   "author": "MauricioAcosta <andres.taamap@gmail.com>",
   "private": true,
   "scripts": {
-    "start": "npm run webscrapy && npm run start-server",
+    "start": "npm run webscrapy && npm run start-server-prod",
+    "start-server-prod": "npm run build && node serverexpress.js",
     "webscrapy": "python3 locallibrary/manage.py runserver &",
     "dev": "node build/dev-server.js",
     "start-server": "node build/dev-server.js",
