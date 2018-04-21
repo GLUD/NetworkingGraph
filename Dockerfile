@@ -12,7 +12,7 @@ CMD npm start
 
 # @link: https://hub.docker.com/r/heroku/heroku/
 # docker build -t networkinggraph .
-# docker run -p 8080:8080 -e PORT=8080 networkinggraph
+# docker run -ti -p 8080:8080 -e PORT=8080 networkinggraph
 # docker run -ti networkinggraph /bin/bash
 # @link: https://devcenter.heroku.com/articles/container-registry-and-runtime
 # heroku container:push web
