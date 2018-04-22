@@ -1,6 +1,6 @@
 FROM heroku/heroku:16
 RUN apt-get update && apt-get install -y \
-    python3-pip \
+    python3-pip && traceroute\
     && pip3 --version \
     && rm -rf /var/lib/apt/lists/*
 
