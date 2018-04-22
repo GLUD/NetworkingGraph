@@ -1,6 +1,7 @@
 FROM heroku/heroku:16
 RUN apt-get update && apt-get install -y \
-    python3-pip && traceroute\
+    python3-pip\
+    traceroute\
     && pip3 --version \
     && rm -rf /var/lib/apt/lists/*
 
@@ -14,7 +15,7 @@ CMD ./start.sh
 
 # @link: https://hub.docker.com/r/heroku/heroku/
 # docker build -t webscraper .
-# docker run -ti -p 8080:8080 -e PORT=8080 webscraper
+# docker run -ti -p 8000:8000 -e PORT=8000 webscraper
 # docker run -ti webscraper /bin/bash
 # @link: https://devcenter.heroku.com/articles/container-registry-and-runtime
 # heroku container:push webscraper

@@ -19,7 +19,7 @@ CMD node serverexpress.js
 
 # @link: https://hub.docker.com/r/heroku/heroku/
 # docker build -t networkinggraph .
-# docker run -ti -p 8000:8000 -e PORT=8000 networkinggraph
+# docker run -ti -p 8003:8003 -e PORT=8003 networkinggraph
 # docker run -ti networkinggraph /bin/bash
 # @link: https://devcenter.heroku.com/articles/container-registry-and-runtime
 # heroku container:push web
