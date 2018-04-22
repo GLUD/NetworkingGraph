@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
 ADD ./ /opt/webapp/
 WORKDIR /opt/webapp
 
-CMD pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
+
 CMD ./start.sh
 
 # @link: https://hub.docker.com/r/heroku/heroku/
