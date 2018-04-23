@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip\
     traceroute\
     && pip3 --version \
-    && pip3 install --upgrade pip \
+    #&& pip3 install --upgrade pip \
     && pip3 --version \
     && rm -rf /var/lib/apt/lists/*
 
