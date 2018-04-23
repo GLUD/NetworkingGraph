@@ -25,7 +25,9 @@ SECRET_KEY = '^m&#r(klbv-_(m#k%x0bg5k$zt5)399hr3unz&8qrt88(ro&mw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'glud-traceroute.herokuapp.com'
+]
 
 
 # Application definition
