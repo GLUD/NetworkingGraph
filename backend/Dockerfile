@@ -3,11 +3,6 @@ RUN apt-get update && apt-get install -y \
     python3-pip\
     traceroute\
     && pip3 --version \
-<<<<<<< HEAD
-    #&& pip3 install --upgrade pip \
-    && pip3 --version \
-=======
->>>>>>> 78037d6d1fff00b3372f31819125f0b7c7111de4
     && rm -rf /var/lib/apt/lists/*
 
 # Add our code
