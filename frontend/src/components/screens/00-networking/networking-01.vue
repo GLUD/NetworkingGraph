@@ -114,7 +114,7 @@ export default {
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
       // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
-      axios.get('http://localhost:8000/ws1/' + this.dominio + '/')
+      axios.get('https://glud-traceroute-webscraper.herokuapp.com/ws1/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
@@ -135,7 +135,7 @@ export default {
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
       // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
-      axios.get('http://localhost:8000/ws2/' + this.dominio + '/')
+      axios.get('https://glud-traceroute-webscraper.herokuapp.com/ws2/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
@@ -156,7 +156,7 @@ export default {
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
       // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
-      axios.get('http://localhost:8000/ws3/' + this.dominio + '/')
+      axios.get('https://glud-traceroute-webscraper.herokuapp.com/ws3/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
@@ -177,7 +177,7 @@ export default {
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
       // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
-      axios.get('http://localhost:8000/ws4/' + this.dominio + '/')
+      axios.get('https://glud-traceroute-webscraper.herokuapp.com/ws4/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
@@ -198,7 +198,7 @@ export default {
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
       // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
-      axios.get('http://localhost:8000/ws5/' + this.dominio + '/')
+      axios.get('https://glud-traceroute-webscraper.herokuapp.com/ws5/' + this.dominio + '/')
         .then((response) => {
           console.log('success response', response);
           this.$refs.cargando.close();
@@ -219,7 +219,7 @@ export default {
       this.dominio = this.$store.state.pregunta.direccion
       console.log("Espere...");
       // https://medium.com/techtrument/handling-ajax-request-in-vue-applications-using-axios-1d26c47fab0
-      axios.get('http://localhost:8000/local?host=' + this.dominio)
+      axios.get('https://glud-traceroute-webscraper.herokuapp.com/local?host=' + this.dominio)
         .then((response) => {
           console.log('success response', response);
           this.info = true
