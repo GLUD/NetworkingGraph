@@ -90,7 +90,7 @@ def ws1(request, host):
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print("¡Archivo Generado!")
+    print("Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -147,7 +147,7 @@ def ws2(request, host):
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print("¡Archivo Generado!")
+    print("Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -204,7 +204,7 @@ def ws3(request, host):
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print("¡Archivo Generado!")
+    print("Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -261,7 +261,7 @@ def ws4(request, host):
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print("¡Archivo Generado!")
+    print("Archivo Generado!")
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
@@ -289,7 +289,7 @@ def ws5(request, host):
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print("¡Archivo Generado!")
+    print("Archivo Generado!")
     lines = rawResponse.split('\n')
     lines = lines[1:-3] # remove no info lines
     data = []
@@ -335,7 +335,7 @@ def local(request):
     print("Generando Archivo ...")
     archivo.write(rawResponse)
     archivo.close()
-    print("¡Archivo Generado!")
+    print("Archivo Generado!")
     lines = rawResponse.split('\n')
     lines = lines[1:-1] # remove no info lines
     data = []

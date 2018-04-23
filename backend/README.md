@@ -1,0 +1,4 @@
+# Ejecutar
+```
+./start.sh
+```
