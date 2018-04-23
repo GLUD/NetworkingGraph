@@ -366,3 +366,6 @@ def local(request):
         data.append(node)
     #data = {'foo': 'bar', 'hello': 'world'}
     return HttpResponse(json.dumps(data), content_type='application/json')
+
+def hello(request):
+    return HttpResponse("<h1>Hola Heroku!</h1>")
