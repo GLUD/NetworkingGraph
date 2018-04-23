@@ -22,6 +22,6 @@ CMD node serverexpress.js
 # docker run -ti -p 8003:8003 -e PORT=8003 networkinggraph
 # docker run -ti networkinggraph /bin/bash
 # @link: https://devcenter.heroku.com/articles/container-registry-and-runtime
-# heroku container:push web
+# heroku container:push networkinggraph
 # heroku open
 # heroku logs
