@@ -26,7 +26,8 @@ SECRET_KEY = '^m&#r(klbv-_(m#k%x0bg5k$zt5)399hr3unz&8qrt88(ro&mw'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'glud-traceroute.herokuapp.com'
+    'glud-traceroute.herokuapp.com',
+    'glud-traceroute-webscraper.herokuapp.com'
 ]
 
 
