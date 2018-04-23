@@ -1,8 +1,8 @@
 <template>
-<div id="app" class="animated fadeInDown">
+<div id="app" class="">
   <v-app :class="color">
     <header-app></header-app>
-    <main>
+    <main class="animated fadeInDown">
       <section class="main-container" aria-label="contenido">
         <v-layout justify-center wrap class="appcontain">
           <v-flex xs12 sm12 md12 lg8>

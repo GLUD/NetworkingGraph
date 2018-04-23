@@ -1,5 +1,5 @@
 <template>
-<header class="light-dark-int">
+<header class="animated fadeInDown light-dark-int">
   <div class="col-sm-12">
     <h1>Networking Graph</h1>
     <p>Laboratorio traza de rutas locales y remotas</p>
